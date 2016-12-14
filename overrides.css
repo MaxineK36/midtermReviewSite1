@@ -1,0 +1,32 @@
+.navbar-default .navbar-nav>li>a {
+	color: #330019;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+	color: #80003c;
+}
+
+.navbar-default {
+	background-color: #ffffcc;
+
+/*	Also considered: #ffffe6; */
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+	background-color: #ffffff;
+}
+
+body {
+	font-family: 'Cormorant Infant', serif;
+	font-size: 16pt;
+	background-color: #003300;
+
+}
+
+img {
+	height: 200%;
+	vertical-align: top;
+	margin-top: -25%;
+
+}
+

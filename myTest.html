@@ -1,0 +1,228 @@
+<html>
+
+<head>
+<!--   <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fanwood+Text" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oranienbaum" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Kameron" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Halant" rel="stylesheet"> -->
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Cormorant+Infant" rel="stylesheet">
+
+
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <link rel = "stylesheet" href = "overrides.css">
+ <link href="myTest.css" rel="stylesheet">
+
+</head>
+
+<script>
+$(document).ready(function()
+{
+  $(".collapseUnit").hide();
+  $(".toggleUnits").click(function(){
+    $(this).parents().parents().next(".collapseUnit").slideToggle(300, function()
+    {
+
+    });
+  });
+});
+  </script>
+
+
+<body>
+ <div class="navbar navbar-default" role="navigation">  
+    <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <div class="icon-bar"></div>
+              <div class="icon-bar"></div>
+              <div class="icon-bar"></div>
+            </button>
+            <a class="navbar-brand"> <img src = "symbol.png">  </a>
+    </div>
+  <div id="navbar" class = "navbar-collapse collapse"> 
+    <ul class = "nav navbar-nav">
+      <li> <a href="index.html"> Home </a> <li>
+        <li  class ="active"> <a href="---.html"> Practice Tests </a> </li>
+        <li> <a href="---.html"> Results </a> </li>
+        <li> <a href="---.html"> About </a> </li>
+
+    </ul>
+   </div>
+  </div>
+</div>
+
+
+<div class = "container" id="theQuestions">
+  <div class="row">
+      <!-- Creating a column to the left: -->    
+    <div class="col-md-2">
+      </div>
+    <div class="col-md-8" id="questionBox">
+      <div class="actualQuestion">
+        <p id="questionIndicator"> </p>
+        <p id="questionText"> </p>
+        <div class="alert alert-danger"> You didn't select a response </div>
+          <form>
+            <div class="radio">
+              <label> <input type="radio" class="radioButton" name="optradio"> <p id="choice1" class="choice"> </p> </label>
+            </div>
+            <div class="radio">
+              <label> <input type="radio" class="radioButton" name="optradio"> <p id="choice2" class="choice"> </p></label>
+            </div>
+            <div class="radio">
+              <label> <input type="radio" class="radioButton" name="optradio"> <p id="choice3" class="choice"> </p> </label>
+            </div>
+            <div class="radio">
+              <label> <input type="radio" class="radioButton" name="optradio"> <p id="choice4" class="choice"> </p> </label>
+            </div> 
+            <div class="radio">
+              <label> <input type="radio" class="radioButton" name="optradio"> <p id="choice5" class="choice"> </p> </label>
+            </div> 
+            <button type="button" class="btn btn-default" onclick="buttonClicked()" id="submitButton"> Submit </button>
+            <button type="button" class="btn btn-default" id="doneButton" onclick="buttonClicked()"> Finish Test </button>
+          </form>
+        </div>
+    </div>
+        <!-- Creating a column to the right: -->    
+     <div class="col-md-2">
+       </div>
+  </div>
+
+<div class="row">
+  <div class="col-md-1">
+    </div>
+  <div class="col-md-10">
+    <div class="progress">
+       <div class="progress-bar" role="progressbar">
+        </div>
+    </div>
+
+  </div>
+  <div class="col-md-1">
+       </div>
+</div>
+</div>
+
+<div class= "container" id = "theResults"> 
+  <div class= "row"> 
+    <div class="col-md-2"> </div>
+    <div class="col-md-8"> 
+      <div class="scoreDiv"> 
+        <p class="yourScore"> Your score: </p>
+        <p id="score"> </p>
+      </div>
+    </div>
+    <div class="col-md-2"> </div>
+    </div>
+
+  <div class="row">
+    <div class="col-md-2"> </div>
+    <div class="col-md-8"> 
+      <div id="resultDetails">
+        <!-- First collapsable thing -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <p class="panel-title">
+                <a class="toggleUnits" id="unit1">
+                  <p class="unitScore" id="unit1Score"> </p> </a> </p></div>
+            <div class = "collapseUnit">
+              <div class="panel-body">
+                <div id="unit1Questions">
+                   <p> See all the questions for this section below. The correct answer is in <span style="color:green;font-style:italic;"> green</span>, and if your answer was incorrect it will be in <span style="color:red;"> red</span>. </p>
+                </div>
+              </div>
+            </div>
+          </div>  
+           <!--End of first collapsable thing-->
+           <!-- Second collapsable thing -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <p class="panel-title">
+                <a class="toggleUnits" id="unit2">
+                 <p class="unitScore" id="unit2Score"> </p> </a>
+              </p>
+            </div>
+            <div class="collapseUnit">
+              <div class="panel-body">
+                <div id="unit2Questions">
+                   <p> See all the questions for this section below. The correct answer is in <span style="color:green;font-style:italic;"> green</span>, and if your answer was incorrect it will be in <span style="color:red;"> red</span>. </p>
+                </div>
+              </div>
+            </div>
+          </div>   
+           <!--End of second collapsable thing-->
+           <!-- Third collapsable thing -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <p class="panel-title">
+                <a class="toggleUnits" id="unit3">
+                  <p class="unitScore" id="unit3Score"> </p> </a> </p></div>
+            <div class = "collapseUnit">
+              <div class="panel-body">
+                <div id="unit3Questions">
+                    <p> See all the questions for this section below. The correct answer is in <span style="color:green;font-style:italic;"> green</span>, and if your answer was incorrect it will be in <span style="color:red;"> red</span>. </p>
+                </div>
+              </div>
+            </div>
+          </div>  
+           <!--End of third collapsable thing-->
+            <!-- Fourth collapsable thing -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <p class="panel-title">
+                <a class="toggleUnits" id="unit4">
+                  <p class="unitScore" id="unit4Score"> </p> </a> </p></div>
+            <div class = "collapseUnit">
+              <div class="panel-body">
+                <div id="unit4Questions">
+                   <p> See all the questions for this section below. The correct answer is in <span style="color:green;font-style:italic;"> green</span>, and if your answer was incorrect it will be in <span style="color:red;"> red</span>. </p>
+                </div>
+              </div>
+            </div>
+          </div>  
+           <!--End of fourth collapsable thing-->
+            <!-- Fifth collapsable thing -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <p class="panel-title">
+                <a class="toggleUnits" id="unit5">
+                  <p class="unitScore" id="unit5Score"> </p> </a> </p></div>
+            <div class = "collapseUnit">
+              <div class="panel-body">
+                <div id="unit5Questions">
+                    <p> See all the questions for this section below. The correct answer is in <span style="color:green;font-style:italic;"> green</span>, and if your answer was incorrect it will be in <span style="color:red;"> red</span>. </p>
+                </div>
+              </div>
+            </div>
+          </div>  
+           <!--End of fifth collapsable thing-->
+      </div>
+      </div>
+    <div class="col-md-2"> </div>
+
+  </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"> </script>
+<script src="js/bootstrap.min.js"> </script>
+<script src ="myTest.js"></script>
+
+</html>
+
+
