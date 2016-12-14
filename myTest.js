@@ -12,7 +12,7 @@ var percentCompleted
 var database = firebase.database();
 
 function writeUserData(questionText, answerArray, correctAnswer, unitNumber, questionNumber) {
-  firebase.database().ref('users/' + userId).set({
+  firebase.database().set({
     questionText: questionText,
     answerArray: answerArray,
     correctAnswer: correctAnswer,
