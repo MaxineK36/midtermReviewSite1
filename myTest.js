@@ -20,13 +20,14 @@ function writeUserData(questionText, answerArray, correctAnswer, unitNumber, que
     questionNumber: questionNumber,
 
   });
+  }
 
 for (var i=0; i<questionArray.length; i++){
 	writeUserData(questionArray[i].questionText,questionArray[i].answerArray,questionArray[i].correctAnswer,questionArray[i].unitNumber,questionArray[i].questionNumber)
 }
 
 
-}
+
 
 var questionArray = [
 	{
