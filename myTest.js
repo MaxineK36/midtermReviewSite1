@@ -12,7 +12,7 @@ var percentCompleted
 var database = firebase.database();
 
 function writeUserData(questionText, answerArray, correctAnswer, unitNumber, questionNumber) {
-  firebase.database().set({
+  firebase.database('/questions').update({
     questionText: questionText,
     answerArray: answerArray,
     correctAnswer: correctAnswer,
@@ -22,9 +22,6 @@ function writeUserData(questionText, answerArray, correctAnswer, unitNumber, que
   });
   }
 
-for (var i=0; i<questionArray.length; i++){
-	writeUserData(questionArray[i].questionText,questionArray[i].answerArray,questionArray[i].correctAnswer,questionArray[i].unitNumber,questionArray[i].questionNumber)
-}
 
 
 
@@ -161,7 +158,14 @@ var questionArray = [
 	
 	];
 
+for (var i=0; i<questionArray.length; i++){
+	writeUserData(questionArray[i].questionText,questionArray[i].answerArray,questionArray[i].correctAnswer,questionArray[i].unitNumber,questionArray[i].questionNumber)
+}
+
+
 $(".progress-bar").css({"width": (100/(questionArray.length))+"%"});
+
+
 
 console.log((questionArray[0].answerArray)[0])
 
