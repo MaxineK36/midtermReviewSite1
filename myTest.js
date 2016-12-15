@@ -158,7 +158,7 @@ var questionArray = [
 	
 	];
 
-  firebase.database('/questions').update({
+  firebase.database.ref('/questions').update({
 		questionText: "A sports car accelerates uniformly from rest, reaching a speed of 30 m/s in 6 seconds. During those 6 seconds, the car has traveled a distance of",
   });
 
