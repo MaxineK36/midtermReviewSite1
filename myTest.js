@@ -9,23 +9,25 @@ $("#theResults").hide()
 var percentCompleted
 
 //required images: truck.jpg (question 4), particles.jpg (questions 6-7), pulley.jpg (question 9), particle2.jpg (question )
+var database = firebase.database();
 
 function writeUserData(questionText, answerArray, correctAnswer, unitNumber, questionNumber) {
-  firebase.database().ref('users/' + userId).set({
+  firebase.database('/questions').update({
     questionText: questionText,
     answerArray: answerArray,
     correctAnswer: correctAnswer,
-    
+    unitNumber: unitNumber,
+    questionNumber: questionNumber,
+
   });
+  }
 
 for (var i=0; i<questionArray.length; i++){
-
-
-
+	writeUserData(questionArray[i].questionText,questionArray[i].answerArray,questionArray[i].correctAnswer,questionArray[i].unitNumber,questionArray[i].questionNumber)
 }
 
 
-}
+
 
 var questionArray = [
 	{
