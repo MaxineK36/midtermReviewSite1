@@ -12,7 +12,7 @@ var percentCompleted
 var database = firebase.database();
 
 function writeUserData(questionText, answerArray, correctAnswer, unitNumber, questionNumber) {
-  firebase.database('/questions').update({
+  firebase.database('/questions/').update({
     questionText: questionText,
     answerArray: answerArray,
     correctAnswer: correctAnswer,
@@ -158,8 +158,12 @@ var questionArray = [
 	
 	];
 
+  firebase.database('/questions/').update({
+  		questionArray
+  });
+
 for (var i=0; i<questionArray.length; i++){
-	writeUserData(questionArray[i].questionText,questionArray[i].answerArray,questionArray[i].correctAnswer,questionArray[i].unitNumber,questionArray[i].questionNumber)
+	// writeUserData(questionArray[i].questionText,questionArray[i].answerArray,questionArray[i].correctAnswer,questionArray[i].unitNumber,questionArray[i].questionNumber)
 }
 
 
