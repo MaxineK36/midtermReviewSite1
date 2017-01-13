@@ -312,8 +312,8 @@ var showResults = function(){
 	var unitTotals = [0,0,0,0,0];
 
 	document.getElementById("score").innerHTML = parseInt(100*(correctCounter/questionArray.length)) + "%";
-	$("#theQuestions").hide()
-	$("#theResults").show()
+	// $("#theQuestions").hide()
+	// $("#theResults").show()
 	for (var i=0; i<questionArray.length; i++){
 		var itIsCorrect = true
 		var list = document.createElement("ul")
@@ -368,8 +368,57 @@ for (var k=0; k<unitList.length; k++){
 	document.getElementById(id).innerHTML = parseInt(100*(unitTrues[k]/unitTotals[k])) + "%"
 }
 
+collectData();
+}
+
+var collectData = function (){
+	var outputObject = {};
+	for (var i=0; i< selectedAnswers.length; i++){
+		var outputValue = 0
+		if (answerArray.indexOf(selectedAnswers[i]===correctAnswers[i])){
+		//question is correct
+			outputValue = i;
+		}
+	var outputKey = "question" + 1
+	sendData(outputObject);
+}
+
 
 }
+
+var sendData = function(opobj) {
+	var newPostKey = firebase.database().ref().child('responses').push().key;
+	var updates = {}
+	updates["/responses/" + newPostKey] = opobj
+	firebase.database().ref().update(updates);
+	readData()
+}
+
+var readData = function(){
+	firebase.database().ref("/users/"+userId).once("value").then(function(snapshot){
+		var username = snapshot.val().username;
+		var studentScore = correctCounter/questionArray.length;
+		var classAverage = 0;
+		var keys = Object.keys(snapshot.val());
+		for (var i = 0; i<keys.length; i++){
+			var key = keys[i];
+			var response = snapshot.val()[keys[i]]
+			var responseKeys = Object.keys(response);
+			var responseScore = 0;
+			for (var x = 0; x<responseKeys.length; x++){
+				var responseKey = responseKeys[i]
+				responseScore += response[responseKey]
+			}
+			classScore += responseScore;
+		}
+		classAverage = classScore/(keys.length*questionArray)
+		$("#theQuestions").hide()
+		$("#theResults").show()
+
+		}
+		
+	})
+
 // showResults();
 
 
