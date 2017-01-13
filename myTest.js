@@ -415,9 +415,9 @@ var readData = function(){
 		$("#theQuestions").hide()
 		$("#theResults").show()
 
-		}
+		});
 		
-	})
+	}
 
 // showResults();
 
