@@ -5,9 +5,10 @@ $("#theResults").hide()
 // $('#doneButton').on('click', function() { window.location = 'myTestResults.html'; });
 
 
-console.log("10:58 version working")
+console.log("11:02 version working")
 
 var percentCompleted
+var score 
 
 //required images: truck.jpg (question 4), particles.jpg (questions 6-7), pulley.jpg (question 9), particle2.jpg (question )
 var database = firebase.database();
@@ -155,10 +156,7 @@ for (var i=0; i<questionArray.length; i++){
 $(".progress-bar").css({"width": (100/(questionArray.length))+"%"});
 
 
-console.log((questionArray[0].answerArray)[0])
-
 //keeping track of the unit number for each question
-
 //1. Kinematics
 //2. Tension
 //3. Work/Energy/Power
@@ -221,7 +219,7 @@ var displayAnswers = function(){
 	if (questionCounter<questionArray.length){
 		//shows the answers
 		var answers = questionArray[questionCounter].answerArray
-		console.log("answer array at question counter is" + questionArray[questionCounter].answerArray)
+		console.log("answer array at question counter is " + questionArray[questionCounter].answerArray)
 		for (var i=0; i<answers.length; i++){
 			var answerText = answers[i]
 			var choiceName = "choice" + (i+1);
@@ -317,11 +315,11 @@ var showResults = function(){
 	var mn = today.getMinutes().toString();
 	var rightNow = y+m+d+h+mn
 	var refKey = "/SelectedAnswers_"+rightNow
-	var percentCorrect = correctCounter/questionArray.length;
+	var score = parseInt(100*(correctCounter/questionArray.length)) + "%";
+	// var percentCorrect = correctCounter/questionArray.length;
 	firebase.database().ref(refKey).update({
   		selectedAnswers,
-  		percentCorrect
-
+  		score
  	 });
 	
 
@@ -336,7 +334,8 @@ var showResults = function(){
 	var unitTotals = [0,0,0,0,0];
 
 	//your total score (as a %)
-	document.getElementById("score").innerHTML = parseInt(100*(correctCounter/questionArray.length)) + "%";
+	document.getElementById("score").innerHTML = score;
+	//parseInt(100*(correctCounter/questionArray.length)) + "%";
 
 	//to loop through each question
 	for (var i=0; i<questionArray.length; i++){
