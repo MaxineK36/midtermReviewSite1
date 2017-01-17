@@ -4,7 +4,7 @@ $("#doneButton").hide()
 $("#theResults").hide()
 // $('#doneButton').on('click', function() { window.location = 'myTestResults.html'; });
 
-console.log("11:09 version working")
+console.log("11:13 version working")
 
 var percentCompleted
 
@@ -401,7 +401,7 @@ var sendData = function(opobj) {
 }
 
 var readData = function(){
-	firebase.database().ref("/users/"+userId).once("value").then(function(snapshot){
+	firebase.database().ref('/responses/'+userId).once("value").then(function(snapshot){
 		var username = snapshot.val().username;
 		var studentScore = correctCounter/questionArray.length;
 		var classAverage = 0;
@@ -417,7 +417,7 @@ var readData = function(){
 			}
 			classScore += responseScore;
 		}
-		classAverage = classScore/(keys.length*questionArray)
+		classAverage = classScore/(keys.length*questionArray.length)
 		$("#theQuestions").hide()
 		$("#theResults").show()
 
