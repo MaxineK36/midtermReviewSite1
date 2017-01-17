@@ -165,9 +165,7 @@ for (var i=0; i<questionArray.length; i++){
 	// writeUserData(questionArray[i].questionText,questionArray[i].answerArray,questionArray[i].correctAnswer,questionArray[i].unitNumber,questionArray[i].questionNumber)
 }
 
-
 $(".progress-bar").css({"width": (100/(questionArray.length))+"%"});
-
 
 
 console.log((questionArray[0].answerArray)[0])
@@ -214,10 +212,9 @@ $(document).ready(function(){
 	displayQuestion();
 	displayAnswers();
 	displayQuestionNumber();
-
 	console.log("hi")
-
 });
+
 
 var displayQuestion = function(){
 	//Hides the "you didn't select an answer" alert
