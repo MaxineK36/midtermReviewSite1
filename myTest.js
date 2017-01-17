@@ -5,7 +5,7 @@ $("#theResults").hide()
 // $('#doneButton').on('click', function() { window.location = 'myTestResults.html'; });
 
 
-console.log("10:54 version working")
+console.log("10:58 version working")
 
 var percentCompleted
 
@@ -317,8 +317,11 @@ var showResults = function(){
 	var mn = today.getMinutes().toString();
 	var rightNow = y+m+d+h+mn
 	var refKey = "/SelectedAnswers_"+rightNow
+	var percentCorrect = correctCounter/questionArray.length;
 	firebase.database().ref(refKey).update({
-  		selectedAnswers
+  		selectedAnswers,
+  		percentCorrect
+
  	 });
 	
 
@@ -410,8 +413,16 @@ var showResults = function(){
 
 	$("#theQuestions").hide();
 	$("#theResults").show();
-	// collectData();
 }
+
+
+
+
+
+
+
+
+
 
 // var collectData = function (){
 // 	var outputObject = {};
@@ -430,14 +441,14 @@ var showResults = function(){
 
 
 
+// var sendData = function(opobj) {
+// 	var newPostKey = firebase.database().ref().child('responses').push().key;
+// 	var updates = {};
+// 	updates['/responses/' + newPostKey] = opobj
+// 	firebase.database().ref().update(updates);
+// 	// readData()
+// }
 
-var sendData = function(opobj) {
-	var newPostKey = firebase.database().ref().child('responses').push().key;
-	var updates = {};
-	updates['/responses/' + newPostKey] = opobj
-	firebase.database().ref().update(updates);
-	// readData()
-}
 // function writeUserData(questionText, answerArray, correctAnswer, unitNumber, questionNumber) {
 //   firebase.database('/questions/').update({
 //     questionText: questionText,
