@@ -4,7 +4,7 @@ $("#doneButton").hide()
 $("#theResults").hide()
 // $('#doneButton').on('click', function() { window.location = 'myTestResults.html'; });
 
-console.log("8:23 version working")
+console.log("8:28 version working")
 
 var percentCompleted
 
@@ -205,8 +205,11 @@ $(document).ready(function(){
 var displayQuestion = function(){
 	//Hides the "you didn't select an answer" alert
 	$(".alert").hide()
+	
+	if (questionCounter<questionArray.length){
 	//shows the question text at questionCounter
 	document.getElementById("questionText").innerHTML = questionArray[questionCounter].questionText;
+	 }
 
 }
 
@@ -333,10 +336,10 @@ var showResults = function(){
 			listItem.innerHTML = (questionArray[i].answerArray)[j]
 			list.appendChild(listItem);
 
-			var currentAnswer = questionArray[i].answerArray)[j]
+			var currentAnswer = (questionArray[i].answerArray)[j]
 
 			//if we've found the answer you chose, let's now find out if it's right or not (should only get here once per question)
-			if (currentAnswer===selectedAnswer[i]){
+			if (currentAnswer===selectedAnswers[i]){
 				//if you got it right, mark this list item as green
 				if (currentAnswer===questionArray[i].correctAnswer){
 					$(listItem).css("color","green")
