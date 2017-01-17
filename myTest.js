@@ -4,7 +4,7 @@ $("#doneButton").hide()
 $("#theResults").hide()
 // $('#doneButton').on('click', function() { window.location = 'myTestResults.html'; });
 
-console.log("11:04 version working")
+console.log("11:09 version working")
 
 var percentCompleted
 
@@ -378,12 +378,12 @@ var collectData = function (){
 	var outputObject = {};
 	for (var i=0; i<selectedAnswers.length; i++){
 		var outputValue = 0
-		if (answerArray.indexOf(selectedAnswers[i])===correctAnswers[i]){
+		if (questionArray[i].answerArray.indexOf(selectedAnswers[i])===questionArray[i].correctAnswer){
 		//question is correct
 			outputValue = 1;
 		}
-	var outputKey = "question" + i;
-	outputObject[outputKey] = outputValue
+		var outputKey = "question" + i;
+		outputObject[outputKey] = outputValue;
 	}
 	
 	sendData(outputObject);
@@ -395,7 +395,7 @@ var collectData = function (){
 var sendData = function(opobj) {
 	var newPostKey = firebase.database().ref().child('responses').push().key;
 	var updates = {};
-	updates["/responses/" + newPostKey] = opobj
+	updates['/responses/' + newPostKey] = opobj
 	firebase.database().ref().update(updates);
 	// readData()
 }
