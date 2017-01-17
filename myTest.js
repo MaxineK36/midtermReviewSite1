@@ -4,23 +4,23 @@ $("#doneButton").hide()
 $("#theResults").hide()
 // $('#doneButton').on('click', function() { window.location = 'myTestResults.html'; });
 
-console.log("11:13 version working")
+console.log("7:45 version working")
 
 var percentCompleted
 
 //required images: truck.jpg (question 4), particles.jpg (questions 6-7), pulley.jpg (question 9), particle2.jpg (question )
 var database = firebase.database();
 
-function writeUserData(questionText, answerArray, correctAnswer, unitNumber, questionNumber) {
-  firebase.database('/questions/').update({
-    questionText: questionText,
-    answerArray: answerArray,
-    correctAnswer: correctAnswer,
-    unitNumber: unitNumber,
-    questionNumber: questionNumber,
+// function writeUserData(questionText, answerArray, correctAnswer, unitNumber, questionNumber) {
+//   firebase.database('/questions/').update({
+//     questionText: questionText,
+//     answerArray: answerArray,
+//     correctAnswer: correctAnswer,
+//     unitNumber: unitNumber,
+//     questionNumber: questionNumber,
 
-  });
-  }
+//   });
+//   }
 
 
 
@@ -399,6 +399,17 @@ var sendData = function(opobj) {
 	firebase.database().ref().update(updates);
 	// readData()
 }
+function writeUserData(questionText, answerArray, correctAnswer, unitNumber, questionNumber) {
+  firebase.database('/questions/').update({
+    questionText: questionText,
+    answerArray: answerArray,
+    correctAnswer: correctAnswer,
+    unitNumber: unitNumber,
+    questionNumber: questionNumber,
+
+  });
+  }
+
 
 var readData = function(){
 	firebase.database().ref('/responses/'+userId).once("value").then(function(snapshot){
