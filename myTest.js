@@ -25,7 +25,6 @@ function writeUserData(questionText, answerArray, correctAnswer, unitNumber, que
 
 
 
-
 var questionArray = [
 	{
 		questionText: "An object released from rest at time t=0 slides down a frictionless incline a distance of 1 meter during the first second. The distance traveled by the object during the time interval from t=1 second to t=2 seconds is",
@@ -377,9 +376,12 @@ var collectData = function (){
 		var outputValue = 0
 		if (answerArray.indexOf(selectedAnswers[i]===correctAnswers[i])){
 		//question is correct
-			outputValue = i;
+			outputValue = 1;
 		}
-	var outputKey = "question" + 1
+	var outputKey = "question" + i;
+	outputObject[outputKey] = outputValue
+	}
+	
 	sendData(outputObject);
 }
 
@@ -388,10 +390,10 @@ var collectData = function (){
 
 var sendData = function(opobj) {
 	var newPostKey = firebase.database().ref().child('responses').push().key;
-	var updates = {}
+	var updates = {};
 	updates["/responses/" + newPostKey] = opobj
 	firebase.database().ref().update(updates);
-	readData()
+	// readData()
 }
 
 var readData = function(){
