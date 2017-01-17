@@ -5,7 +5,7 @@ $("#theResults").hide()
 // $('#doneButton').on('click', function() { window.location = 'myTestResults.html'; });
 
 
-console.log("10:26 version working")
+console.log("10:46 version working")
 
 var percentCompleted
 
@@ -257,16 +257,23 @@ var buttonClicked = function(){
 			var choiceName = "choice" + (i+1);
 			var selection = document.getElementById(choiceName).innerHTML;
 
-			
-			selectedAnswers.push(selection)
+			var correct
 
-			// questionArray[questionCounter-1].selectedAnswer = selection
-			console.log(selection)
-				
 			if (selection === questionArray[questionCounter-1].correctAnswer){
 				correctCounter++;
+				correct=true;
 				console.log(correctCounter)
 			}
+
+			if (correct===true){
+				selectedAnswers.push([selection,"correct"])
+			}
+			else{
+				selectedAnswers.push([selection,"incorrect"])
+			}
+			
+			// questionArray[questionCounter-1].selectedAnswer = selection
+			console.log(selection)
 			break;
 			
 		}
@@ -334,7 +341,7 @@ var showResults = function(){
 		var list = document.createElement("ul")
 
 		//just adding 1 to the total number of questions for whatever unit this question is in
-		unitTotals[(questionArray[i].unitNumber)-1] = unitTotals[(questionArray[i].unitNumber)-1] + 1
+		unitTotals[(questionArray[i].unitNumber)-1]++
 			
 		
 		//to loop through each answer
@@ -348,7 +355,8 @@ var showResults = function(){
 			var currentAnswer = (questionArray[i].answerArray)[j]
 
 			//if we've found the answer you chose, let's now find out if it's right or not (should only get here once per question)
-			if (currentAnswer===selectedAnswers[i]){
+			if (currentAnswer===selectedAnswers[i][0]){
+				console.log("you got it right");
 				//if you got it right, mark this list item as green
 				if (currentAnswer===questionArray[i].correctAnswer){
 					$(listItem).css("color","green")
@@ -442,30 +450,30 @@ var sendData = function(opobj) {
 //   }
 
 
-var readData = function(){
-	firebase.database().ref('/responses/'+userId).once("value").then(function(snapshot){
-		var username = snapshot.val().username;
-		var studentScore = correctCounter/questionArray.length;
-		var classAverage = 0;
-		var keys = Object.keys(snapshot.val());
-		for (var i = 0; i<keys.length; i++){
-			var key = keys[i];
-			var response = snapshot.val()[keys[i]]
-			var responseKeys = Object.keys(response);
-			var responseScore = 0;
-			for (var x = 0; x<responseKeys.length; x++){
-				var responseKey = responseKeys[i]
-				responseScore += response[responseKey]
-			}
-			classScore += responseScore;
-		}
-		classAverage = classScore/(keys.length*questionArray.length)
-		$("#theQuestions").hide()
-		$("#theResults").show()
+// var readData = function(){
+// 	firebase.database().ref('/responses/'+userId).once("value").then(function(snapshot){
+// 		var username = snapshot.val().username;
+// 		var studentScore = correctCounter/questionArray.length;
+// 		var classAverage = 0;
+// 		var keys = Object.keys(snapshot.val());
+// 		for (var i = 0; i<keys.length; i++){
+// 			var key = keys[i];
+// 			var response = snapshot.val()[keys[i]]
+// 			var responseKeys = Object.keys(response);
+// 			var responseScore = 0;
+// 			for (var x = 0; x<responseKeys.length; x++){
+// 				var responseKey = responseKeys[i]
+// 				responseScore += response[responseKey]
+// 			}
+// 			classScore += responseScore;
+// 		}
+// 		classAverage = classScore/(keys.length*questionArray.length)
+// 		$("#theQuestions").hide()
+// 		$("#theResults").show()
 
-		});
+// 		});
 		
-	}
+// 	}
 
 // showResults();
 
