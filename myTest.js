@@ -5,7 +5,7 @@ $("#theResults").hide()
 // $('#doneButton').on('click', function() { window.location = 'myTestResults.html'; });
 
 
-console.log("10:24 version working")
+console.log("10:26 version working")
 
 var percentCompleted
 
@@ -307,8 +307,8 @@ var showResults = function(){
 	var m = (today.getMonth()+1).toString(); //January is 0!
 	var y = today.getFullYear().toString();
 	var h = today.getHours().toString();
-	var m = today.getMinutes().toString();
-	var rightNow = y+m+d+h+m
+	var mn = today.getMinutes().toString();
+	var rightNow = y+m+d+h+mn
 	var refKey = "/SelectedAnswers_"+rightNow
 	firebase.database().ref(refKey).update({
   		selectedAnswers
