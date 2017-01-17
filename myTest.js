@@ -4,7 +4,7 @@ $("#doneButton").hide()
 $("#theResults").hide()
 // $('#doneButton').on('click', function() { window.location = 'myTestResults.html'; });
 
-console.log("7:48 version working")
+console.log("8:23 version working")
 
 var percentCompleted
 
@@ -134,7 +134,7 @@ var questionArray = [
 	},
 	{
 		questionText: "A sports car accelerates uniformly from rest, reaching a speed of 30 m/s in 6 seconds. During those 6 seconds, the car has traveled a distance of",
-		answerArray: ["15 m","30 m","60 m","90 m","180"],
+		answerArray: ["15 m","30 m","60 m","90 m","180 m"],
 		correctAnswer: "90 m",
 		unitNumber: 1,
 		questionNumber: 16
@@ -214,136 +214,168 @@ var displayAnswers = function(){
 	//makes sure no buttons are checked already
 	$("input").removeAttr("checked");
 	//selects just the inner answer array
-if (questionCounter<questionArray.length){
-	var answers = questionArray[questionCounter].answerArray
-	console.log("answer array at question counter is" + questionArray[questionCounter].answerArray)
-	for (var i=0; i<answers.length; i++){
-		var answerText = answers[i]
-		var choiceName = "choice" + (i+1);
-		document.getElementById(choiceName).innerHTML = answerText;
-		}
-	}
-}
+	if (questionCounter<questionArray.length){
+		//shows the answers
+		var answers = questionArray[questionCounter].answerArray
+		console.log("answer array at question counter is" + questionArray[questionCounter].answerArray)
+		for (var i=0; i<answers.length; i++){
+			var answerText = answers[i]
+			var choiceName = "choice" + (i+1);
+			document.getElementById(choiceName).innerHTML = answerText;
+		  }
+	  }
+  }
 
 var displayQuestionNumber = function(){
+	//just displays the question number out of the total number of questions, like 5/8
 	document.getElementById("questionIndicator").innerHTML = "Question "+ (questionCounter+1) + "/" + questionArray.length
-}
+  }
+
+
 //the function below checks your answer
 var buttonClicked = function(){
-	if ((questionCounter)===questionArray.length){
-		console.log("yoooooo")
-		showResults();
-	}
-	else {
 	questionCounter++;
+
+	//adds to the progress bar
 	percentCompleted = ((questionCounter+1)/questionArray.length)*100
 	$(".progress-bar").css({"width": percentCompleted + "%"});
 
 	var radioButtons = document.getElementsByClassName("radioButton");
 	var checkedFlag = false;
+
 	for (var i=0; i<(questionArray[0].answerArray).length; i++){
 		var currentButton = radioButtons[i];
+			//checks to see if you've selected an answer
 			if (currentButton.checked === true) {
 				checkedFlag = true;
+
+			//figures out what you chose
 			var choiceName = "choice" + (i+1);
 			var selection = document.getElementById(choiceName).innerHTML;
 
-			questionArray[questionCounter-1].selectedAnswer = selection
+			
+			selectedAnswers.push(selection)
+
+			// questionArray[questionCounter-1].selectedAnswer = selection
 			console.log(selection)
-				if (selection === questionArray[questionCounter-1].correctAnswer){
+				
+			if (selection === questionArray[questionCounter-1].correctAnswer){
 				correctCounter++;
 				console.log(correctCounter)
-				}
-				break;
 			}
+			break;
+			
+		}
 	}
 
+	//adds the "You didn't select an answer" alert if necessary
 	if (checkedFlag === false){
 			$(".alert").show();
 			return;
 	}
 
-
+	//changes the button from being "Submit" to "Submit Test"
 	if (questionCounter===(questionArray.length-1)){
 		$("#doneButton").show()
 		$("#submitButton").hide()
 	}
 
-	// if (questionCounter>=questionArray.length){
-	// 	alert(correctCounter);
-	// 	//end test
-	// 	//display score report, send scores to data base, etc.
-	// 	return;
 		
+	//check to see if the test should end now
 	if ((questionCounter)===(questionArray.length)){
-		console.log("test is over")
+		console.log("test is over");
 		showResults()
 	}
 	
+	//do it all again
 	displayQuestion();
 	displayAnswers();
 	displayQuestionNumber();
 	console.log(correctCounter);
 	console.log("% done = " + percentCompleted)
 }
-}
 
 
 var showResults = function(){
+	//uploads your answers to firebase
 	firebase.database().ref('/selectedAnswers').update({
-  	selectedAnswers
-  });
+  		selectedAnswers
+ 	 });
+	
+
+	//filling in all the unit names for the results sheet
 	for (var i=0; i<unitList.length; i++){
 		var id = "unit" + String(i+1)
 		document.getElementById(id).innerHTML = unitList[i]
 	}
 
+	//to keep track of how you did on each unit
 	var unitTrues = [0,0,0,0,0];
 	var unitTotals = [0,0,0,0,0];
 
+	//your total score (as a %)
 	document.getElementById("score").innerHTML = parseInt(100*(correctCounter/questionArray.length)) + "%";
-	// $("#theQuestions").hide()
-	// $("#theResults").show()
+
+	//to loop through each question
 	for (var i=0; i<questionArray.length; i++){
 		var itIsCorrect = true
 		var list = document.createElement("ul")
 
+		//just adding 1 to the total number of questions for whatever unit this question is in
 		unitTotals[(questionArray[i].unitNumber)-1] = unitTotals[(questionArray[i].unitNumber)-1] + 1
-			for (var j=0; j<(questionArray[0].answerArray).length; j++){
-				var listItem = document.createElement("li")
-				listItem.innerHTML = (questionArray[i].answerArray)[j]
-				//flagging the above/below lines cause they might not work
-				list.appendChild(listItem);
-				if ((questionArray[i].answerArray)[j]===questionArray[i].correctAnswer){
+			
+		
+		//to loop through each answer
+		for (var j=0; j<(questionArray[0].answerArray).length; j++){
+			
+			//making a list of all the possible answers
+			var listItem = document.createElement("li")
+			listItem.innerHTML = (questionArray[i].answerArray)[j]
+			list.appendChild(listItem);
+
+			var currentAnswer = questionArray[i].answerArray)[j]
+
+			//if we've found the answer you chose, let's now find out if it's right or not (should only get here once per question)
+			if (currentAnswer===selectedAnswer[i]){
+				//if you got it right, mark this list item as green
+				if (currentAnswer===questionArray[i].correctAnswer){
 					$(listItem).css("color","green")
 					$(listItem).css("font-weight","bold")
 					$(listItem).css("font-style","italic")
-
+					itIsCorrect = true;
 				}
-				else if ((questionArray[i].answerArray)[j]===questionArray[i].selectedAnswer){
+				else {
 					$(listItem).css("color","red")
-
-				}
-				if (((questionArray[i].answerArray)[j]===questionArray[i].selectedAnswer)&&((questionArray[i].answerArray)[j]!==questionArray[i].correctAnswer)){
-					console.log("you got it wrong")
 					itIsCorrect = false;
 				}
-				
-			}	
-			var questionWithAnswers = document.createElement("div")
-			if (itIsCorrect===false){
-				questionWithAnswers.innerHTML = "<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>" + (i+1) + ". " + questionArray[i].questionText;
-			console.log('false')
 			}
-			else if (itIsCorrect===true){
-				unitTrues[(questionArray[i].unitNumber)-1] = unitTrues[(questionArray[i].unitNumber)-1] + 1
-				questionWithAnswers.innerHTML = "<span class='glyphicon glyphicon-ok' aria-hidden='true'></span>" + (i+1) + ". " + questionArray[i].questionText;
-			console.log('true')
 
-			}
-			questionWithAnswers.appendChild(list);
-			var tempId = "unit" + (questionArray[i].unitNumber) + "Questions"
-			document.getElementById(tempId).appendChild(questionWithAnswers);
+			//also just in general, mark the correct answer in green
+			if (currentAnswer===questionArray[i].correctAnswer){
+					$(listItem).css("color","green")
+					$(listItem).css("font-weight","bold")
+					$(listItem).css("font-style","italic")
+				}
+			}	
+
+		var questionWithAnswers = document.createElement("div")
+
+		//actually writes in each question with its answers
+		if (itIsCorrect===false){
+			questionWithAnswers.innerHTML = "<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>" + (i+1) + ". " + questionArray[i].questionText;
+			console.log('false')
+		 }
+		else if (itIsCorrect===true){
+			//if it's right, add one to the unitTrues list so it'll keep track of how many you got right in each unit
+			unitTrues[(questionArray[i].unitNumber)-1] = unitTrues[(questionArray[i].unitNumber)-1] + 1
+			questionWithAnswers.innerHTML = "<span class='glyphicon glyphicon-ok' aria-hidden='true'></span>" + (i+1) + ". " + questionArray[i].questionText;
+			console.log('true')
+		 }
+		questionWithAnswers.appendChild(list);
+
+		//adding them into the unit section
+		var tempId = "unit" + (questionArray[i].unitNumber) + "Questions"
+		document.getElementById(tempId).appendChild(questionWithAnswers);
 	}
 
 
@@ -352,15 +384,13 @@ var showResults = function(){
 		var id = "unit" + (k+1) + "Score";
 		console.log("id is " + id)
 		console.log("total = "+unitTotals[k]);
-			console.log("true = "+unitTrues[k]);
-
+		console.log("true = "+unitTrues[k]);
 		document.getElementById(id).innerHTML = parseInt(100*(unitTrues[k]/unitTotals[k])) + "%"
 	}
 
 	$("#theQuestions").hide();
 	$("#theResults").show();
-	collectData();
-
+	// collectData();
 }
 
 var collectData = function (){
