@@ -4,7 +4,8 @@ $("#doneButton").hide()
 $("#theResults").hide()
 // $('#doneButton').on('click', function() { window.location = 'myTestResults.html'; });
 
-console.log("8:28 version working")
+
+console.log("10:24 version working")
 
 var percentCompleted
 
@@ -301,7 +302,15 @@ var buttonClicked = function(){
 
 var showResults = function(){
 	//uploads your answers to firebase
-	firebase.database().ref('/selectedAnswers').update({
+	var today = new Date()
+	var d = today.getDate().toString();
+	var m = (today.getMonth()+1).toString(); //January is 0!
+	var y = today.getFullYear().toString();
+	var h = today.getHours().toString();
+	var m = today.getMinutes().toString();
+	var rightNow = y+m+d+h+m
+	var refKey = "/SelectedAnswers_"+rightNow
+	firebase.database().ref(refKey).update({
   		selectedAnswers
  	 });
 	
@@ -396,20 +405,20 @@ var showResults = function(){
 	// collectData();
 }
 
-var collectData = function (){
-	var outputObject = {};
-	for (var i=0; i<selectedAnswers.length; i++){
-		var outputValue = 0
-		if (questionArray[i].answerArray.indexOf(selectedAnswers[i])===questionArray[i].correctAnswer){
-		//question is correct
-			outputValue = 1;
-		}
-		var outputKey = "question" + i;
-		outputObject[outputKey] = outputValue;
-	}
+// var collectData = function (){
+// 	var outputObject = {};
+// 	for (var i=0; i<selectedAnswers.length; i++){
+// 		var outputValue = 0
+// 		if (questionArray[i].answerArray.indexOf(selectedAnswers[i])===questionArray[i].correctAnswer){
+// 		//question is correct
+// 			outputValue = 1;
+// 		}
+// 		var outputKey = "question" + i;
+// 		outputObject[outputKey] = outputValue;
+// 	}
 	
-	sendData(outputObject);
-}
+// 	sendData(outputObject);
+// }
 
 
 
@@ -421,16 +430,16 @@ var sendData = function(opobj) {
 	firebase.database().ref().update(updates);
 	// readData()
 }
-function writeUserData(questionText, answerArray, correctAnswer, unitNumber, questionNumber) {
-  firebase.database('/questions/').update({
-    questionText: questionText,
-    answerArray: answerArray,
-    correctAnswer: correctAnswer,
-    unitNumber: unitNumber,
-    questionNumber: questionNumber,
+// function writeUserData(questionText, answerArray, correctAnswer, unitNumber, questionNumber) {
+//   firebase.database('/questions/').update({
+//     questionText: questionText,
+//     answerArray: answerArray,
+//     correctAnswer: correctAnswer,
+//     unitNumber: unitNumber,
+//     questionNumber: questionNumber,
 
-  });
-  }
+//   });
+//   }
 
 
 var readData = function(){
