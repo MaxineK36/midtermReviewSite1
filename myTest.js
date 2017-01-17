@@ -221,6 +221,7 @@ var displayQuestion = function(){
 	$(".alert").hide()
 	//shows the question text at questionCounter
 	document.getElementById("questionText").innerHTML = questionArray[questionCounter].questionText;
+
 }
 
 var displayAnswers = function(){
@@ -243,6 +244,11 @@ var displayQuestionNumber = function(){
 }
 //the function below checks your answer
 var buttonClicked = function(){
+	if ((questionCounter)===questionArray.length){
+		console.log("yoooooo")
+		showResults();
+	}
+	else {
 	questionCounter++;
 	percentCompleted = ((questionCounter+1)/questionArray.length)*100
 	$(".progress-bar").css({"width": percentCompleted + "%"});
@@ -255,6 +261,7 @@ var buttonClicked = function(){
 				checkedFlag = true;
 			var choiceName = "choice" + (i+1);
 			var selection = document.getElementById(choiceName).innerHTML;
+
 			questionArray[questionCounter-1].selectedAnswer = selection
 			console.log(selection)
 				if (selection === questionArray[questionCounter-1].correctAnswer){
@@ -263,7 +270,6 @@ var buttonClicked = function(){
 				}
 				break;
 			}
-
 	}
 
 	if (checkedFlag === false){
@@ -283,7 +289,7 @@ var buttonClicked = function(){
 	// 	//display score report, send scores to data base, etc.
 	// 	return;
 		
-	if (questionCounter===(questionArray.length)){
+	if ((questionCounter)===(questionArray.length)){
 		console.log("test is over")
 		showResults()
 	}
@@ -293,8 +299,7 @@ var buttonClicked = function(){
 	displayQuestionNumber();
 	console.log(correctCounter);
 	console.log("% done = " + percentCompleted)
-	
-	
+}
 }
 
 
@@ -314,57 +319,59 @@ var showResults = function(){
 		var itIsCorrect = true
 		var list = document.createElement("ul")
 
+		unitTotals[(questionArray[i].unitNumber)-1] = unitTotals[(questionArray[i].unitNumber)-1] + 1
+			for (var j=0; j<(questionArray[0].answerArray).length; j++){
+				var listItem = document.createElement("li")
+				listItem.innerHTML = (questionArray[i].answerArray)[j]
+				//flagging the above/below lines cause they might not work
+				list.appendChild(listItem);
+				if ((questionArray[i].answerArray)[j]===questionArray[i].correctAnswer){
+					$(listItem).css("color","green")
+					$(listItem).css("font-weight","bold")
+					$(listItem).css("font-style","italic")
 
-	unitTotals[(questionArray[i].unitNumber)-1] = unitTotals[(questionArray[i].unitNumber)-1] + 1
-		for (var j=0; j<(questionArray[0].answerArray).length; j++){
-			var listItem = document.createElement("li")
-			listItem.innerHTML = (questionArray[i].answerArray)[j]
-			//flagging the above/below lines cause they might not work
-			list.appendChild(listItem);
-			if ((questionArray[i].answerArray)[j]===questionArray[i].correctAnswer){
-				$(listItem).css("color","green")
-				$(listItem).css("font-weight","bold")
-				$(listItem).css("font-style","italic")
+				}
+				else if ((questionArray[i].answerArray)[j]===questionArray[i].selectedAnswer){
+					$(listItem).css("color","red")
+
+				}
+				if (((questionArray[i].answerArray)[j]===questionArray[i].selectedAnswer)&&((questionArray[i].answerArray)[j]!==questionArray[i].correctAnswer)){
+					console.log("you got it wrong")
+					itIsCorrect = false;
+				}
+				
+			}	
+			var questionWithAnswers = document.createElement("div")
+			if (itIsCorrect===false){
+				questionWithAnswers.innerHTML = "<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>" + (i+1) + ". " + questionArray[i].questionText;
+			console.log('false')
+			}
+			else if (itIsCorrect===true){
+				unitTrues[(questionArray[i].unitNumber)-1] = unitTrues[(questionArray[i].unitNumber)-1] + 1
+				questionWithAnswers.innerHTML = "<span class='glyphicon glyphicon-ok' aria-hidden='true'></span>" + (i+1) + ". " + questionArray[i].questionText;
+			console.log('true')
 
 			}
-			else if ((questionArray[i].answerArray)[j]===questionArray[i].selectedAnswer){
-				$(listItem).css("color","red")
-
-			}
-			if (((questionArray[i].answerArray)[j]===questionArray[i].selectedAnswer)&&((questionArray[i].answerArray)[j]!==questionArray[i].correctAnswer)){
-				console.log("you got it wrong")
-				itIsCorrect = false;
-			}
-			
-		}	
-		var questionWithAnswers = document.createElement("div")
-		if (itIsCorrect===false){
-			questionWithAnswers.innerHTML = "<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>" + (i+1) + ". " + questionArray[i].questionText;
-		console.log('false')
-		}
-		else if (itIsCorrect===true){
-			unitTrues[(questionArray[i].unitNumber)-1] = unitTrues[(questionArray[i].unitNumber)-1] + 1
-			questionWithAnswers.innerHTML = "<span class='glyphicon glyphicon-ok' aria-hidden='true'></span>" + (i+1) + ". " + questionArray[i].questionText;
-		console.log('true')
-
-		}
-		questionWithAnswers.appendChild(list);
-		var tempId = "unit" + (questionArray[i].unitNumber) + "Questions"
-		document.getElementById(tempId).appendChild(questionWithAnswers);
+			questionWithAnswers.appendChild(list);
+			var tempId = "unit" + (questionArray[i].unitNumber) + "Questions"
+			document.getElementById(tempId).appendChild(questionWithAnswers);
 	}
 
 
 //score for each unit
-for (var k=0; k<unitList.length; k++){
-	var id = "unit" + (k+1) + "Score";
-	console.log("id is " + id)
-	console.log("total = "+unitTotals[k]);
-		console.log("true = "+unitTrues[k]);
+	for (var k=0; k<unitList.length; k++){
+		var id = "unit" + (k+1) + "Score";
+		console.log("id is " + id)
+		console.log("total = "+unitTotals[k]);
+			console.log("true = "+unitTrues[k]);
 
-	document.getElementById(id).innerHTML = parseInt(100*(unitTrues[k]/unitTotals[k])) + "%"
-}
+		document.getElementById(id).innerHTML = parseInt(100*(unitTrues[k]/unitTotals[k])) + "%"
+	}
 
-collectData();
+	$("#theQuestions").hide();
+	$("#theResults").show();
+	collectData();
+
 }
 
 var collectData = function (){
@@ -383,7 +390,7 @@ var collectData = function (){
 }
 
 
-}
+
 
 var sendData = function(opobj) {
 	var newPostKey = firebase.database().ref().child('responses').push().key;
