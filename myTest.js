@@ -5,10 +5,9 @@ $("#theResults").hide()
 // $('#doneButton').on('click', function() { window.location = 'myTestResults.html'; });
 
 
-console.log("11:02 version working")
+console.log("11:04 version working")
 
 var percentCompleted
-var score 
 
 //required images: truck.jpg (question 4), particles.jpg (questions 6-7), pulley.jpg (question 9), particle2.jpg (question )
 var database = firebase.database();
@@ -315,7 +314,7 @@ var showResults = function(){
 	var mn = today.getMinutes().toString();
 	var rightNow = y+m+d+h+mn
 	var refKey = "/SelectedAnswers_"+rightNow
-	var score = parseInt(100*(correctCounter/questionArray.length)) + "%";
+	var score = 100*(correctCounter/questionArray.length);
 	// var percentCorrect = correctCounter/questionArray.length;
 	firebase.database().ref(refKey).update({
   		selectedAnswers,
@@ -334,7 +333,7 @@ var showResults = function(){
 	var unitTotals = [0,0,0,0,0];
 
 	//your total score (as a %)
-	document.getElementById("score").innerHTML = score;
+	document.getElementById("score").innerHTML = parseInt(score) + "%";
 	//parseInt(100*(correctCounter/questionArray.length)) + "%";
 
 	//to loop through each question
