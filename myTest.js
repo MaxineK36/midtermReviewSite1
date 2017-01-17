@@ -4,7 +4,7 @@ $("#doneButton").hide()
 $("#theResults").hide()
 // $('#doneButton').on('click', function() { window.location = 'myTestResults.html'; });
 
-
+console.log("11:04 version working")
 
 var percentCompleted
 
@@ -376,9 +376,9 @@ var showResults = function(){
 
 var collectData = function (){
 	var outputObject = {};
-	for (var i=0; i< selectedAnswers.length; i++){
+	for (var i=0; i<selectedAnswers.length; i++){
 		var outputValue = 0
-		if (answerArray.indexOf(selectedAnswers[i]===correctAnswers[i])){
+		if (answerArray.indexOf(selectedAnswers[i])===correctAnswers[i]){
 		//question is correct
 			outputValue = 1;
 		}
