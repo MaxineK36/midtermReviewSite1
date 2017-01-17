@@ -4,26 +4,12 @@ $("#doneButton").hide()
 $("#theResults").hide()
 // $('#doneButton').on('click', function() { window.location = 'myTestResults.html'; });
 
-console.log("7:45 version working")
+console.log("7:48 version working")
 
 var percentCompleted
 
 //required images: truck.jpg (question 4), particles.jpg (questions 6-7), pulley.jpg (question 9), particle2.jpg (question )
 var database = firebase.database();
-
-// function writeUserData(questionText, answerArray, correctAnswer, unitNumber, questionNumber) {
-//   firebase.database('/questions/').update({
-//     questionText: questionText,
-//     answerArray: answerArray,
-//     correctAnswer: correctAnswer,
-//     unitNumber: unitNumber,
-//     questionNumber: questionNumber,
-
-//   });
-//   }
-
-
-
 
 var questionArray = [
 	{
@@ -304,6 +290,9 @@ var buttonClicked = function(){
 
 
 var showResults = function(){
+	firebase.database().ref('/selectedAnswers').update({
+  	selectedAnswers
+  });
 	for (var i=0; i<unitList.length; i++){
 		var id = "unit" + String(i+1)
 		document.getElementById(id).innerHTML = unitList[i]
