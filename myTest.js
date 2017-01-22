@@ -5,7 +5,7 @@ $("#theResults").hide()
 // $('#doneButton').on('click', function() { window.location = 'myTestResults.html'; });
 
 
-console.log("11:17 version working")
+console.log("2:56 version working")
 
 var percentCompleted
 
