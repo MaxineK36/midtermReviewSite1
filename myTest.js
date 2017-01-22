@@ -5,7 +5,7 @@ $("#theResults").hide()
 // $('#doneButton').on('click', function() { window.location = 'myTestResults.html'; });
 
 
-console.log("2:56 version working")
+console.log("3:13 version working")
 
 var percentCompleted
 
@@ -156,13 +156,13 @@ var questionArray = [
 	{
 		questionText: "A car travels 30 miles at an average speed of 60 miles per hour and then 30 miles at an average speed of 30 miles per hour. The average speed of the car over the 60 miles is",
 		answerArray: ["35 mph","40 mph", "45 mph","50 mph","53 mph"],
-		correctAnswer: ["40 mph"],
+		correctAnswer: "40 mph",
 		unitNumber: 1
 	},
 	{
 		questionText: "A block, starting from rest, slides 20m down a frictionless inclined plan from X to Y, dropping a vertical distance of 10m as shown above. What is the closest approximate velocity of the block at the end of the slide?",
 		answerArray: ["7 m/s","10 m/s","14 m/s","20 m/s", "100 m/s"],
-		correctAnswer: ["14 m/s"],
+		correctAnswer: "14 m/s",
 		unitNumber: 1
 	},
 	{
@@ -369,6 +369,7 @@ var buttonClicked = function(){
 
 				var correct
 
+				console.log("answer should be "+questionArray[questionCounter-1].correctAnswer)
 				if (selection === questionArray[questionCounter-1].correctAnswer){
 					correctCounter++;
 					correct=true;
@@ -377,9 +378,11 @@ var buttonClicked = function(){
 
 				if (correct===true){
 					selectedAnswers.push([selection,"correct"])
+					console.log(selection + " correct")
 				}
 				else{
 					selectedAnswers.push([selection,"incorrect"])
+					console.log(selection + " incorrect")
 				}
 				
 				// questionArray[questionCounter-1].selectedAnswer = selection
@@ -475,26 +478,19 @@ var showResults = function(){
 				if (selectedAnswers[i][1]==="incorrect"){
 					$(listItem).css("color","red")
 					itIsCorrect = false;
+					"it's not correct"
 				}
 				else if (selectedAnswers[i][1]==="correct"){
 					$(listItem).css("color","green")
 					$(listItem).css("font-weight","bold")
 					$(listItem).css("font-style","italic")
 					itIsCorrect = true;
+					"it is correct"
 				}
-				// if (currentAnswer===questionArray[i].correctAnswer){
-				// 	$(listItem).css("color","green")
-				// 	$(listItem).css("font-weight","bold")
-				// 	$(listItem).css("font-style","italic")
-				// 	itIsCorrect = true;
-				// }
-				// else {
-					
-				// }
 			}
 
 			//also just in general, mark the correct answer in green
-			if (currentAnswer===questionArray[i].correctAnswer){
+			else if (currentAnswer===questionArray[i].correctAnswer){
 					$(listItem).css("color","green")
 					$(listItem).css("font-weight","bold")
 					$(listItem).css("font-style","italic")
