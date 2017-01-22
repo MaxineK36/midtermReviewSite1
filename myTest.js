@@ -141,7 +141,120 @@ var questionArray = [
 		questionNumber: 16
 
 	},
-	
+	{
+		questionText: "A mass m moves on a curved path from point X to point Y. Which of the following idagrams indicates a possible combination of the net force F on the mass, and the velocity v and acceleration a of the mass at the location shown?",
+		answerArray: ["a","b","c","d","e"],
+		correctAnswer: "d",
+		unitNumber: 1
+	}
+	{
+		questionText: "In which of the following situations would an object be accelerated, \n I. It moves in a straight line at a constant speed \n II. It moves in uniform circular motion. \n It travels as a projectile in a gravitational field with negligible air resistance.",
+		answerArray: ["I only","III only","I and II only","II and III only","I, II, and III"],
+		correctAnswer: "II and III only",
+		unitNumber: 1
+	}
+	{
+		questionText: "A car travels 30 miles at an average speed of 60 miles per hour and then 30 miles at an average speed of 30 miles per hour. The average speed of the car over the 60 miles is",
+		answerArray: ["35 mph","40 mph", "45 mph","50 mph","53 mph"],
+		correctAnswer: ["40 mph"],
+		unitNumber: 1
+	}
+	{
+		questionText: "A block, starting from rest, slides 20m down a frictionless inclined plan from X to Y, dropping a vertical distance of 10m as shown above. What is the closest approximate velocity of the block at the end of the slide?",
+		answerArray: ["7 m/s","10 m/s","14 m/s","20 m/s", "100 m/s"],
+		correctAnswer: ["14 m/s"],
+		unitNumber: 1
+	}
+	{
+		questionText: "An object is shot vertically upward into the air with a positive initial velocity. Which of the following correctly describes the velocity and acceleration of the object at its maximum elevation?",
+		answerArray: ["V: +, A: +","V: 0, A: 0","V: -, A:-", "V: 0, A: -","V: +, A: -"],
+		correctAnswer: "V: 0, A: -",
+		unitNumber: 1
+	}
+	{
+		questionText: "A block of mass 5 kg lies on an inclined plan, as shown above. The horizontal and vertical supports for the plan have lengths 4m and 3m, respectively. The coefficient of kinetic friction between the plan and the block 0.2. The  magnitude of the force F necessary to pull the block up the plan with constnat speed is most nearly",
+		answerArray: ["30 N","42 N","49 N","50 N", "58 N"],
+		correctAnswer: "42 N",
+		unitNumber: 1
+	}
+	{
+		questionText: "Two people are in a boat that is capable of a maximum speed of 5km/h in still water, and wish to cross a river 1 km wide to a point directly across from their starting point. If the speed of the water in the river is 5 km/h, how much time is required for the crossing?",
+		answerArray: ["0.05 hr","0.1 hr","1 hr","10 hr","The point directly across from the starting point cannot be reached under these conditions"],
+		correctAnswer: "The point directly across from the starting point cannot be reached under these conditions",
+		unitNumber: 1
+	}
+	{
+		questionText: "A cannonball is blasted at an angle of 15.0 degrees above the horizontal and travels a horizontal distance of 125 m, landing at the same height as it was launched, APproximately, what is its initial vertical velocity component?",
+		answerArray: ["13 m/s","26 m/s","50 m/s","71 m/s","190 m/s"],
+		correctAnswer: "13 m/s",
+		unitNumber: 1
+	}
+	{
+		questionText: "How much elastic potential energy is stored in a bungee cord with a spring constant of 10 N/m when the cord is stretched 2m",
+		answerArray: ["10 J", "20 J","40 J","100 J","200 J"],
+		correctAnswer: "20 J",
+		unitNumber: 3
+	}
+	{
+		questionText: "The constnat force F with components Fx=3 N and Fy = 4N, shown above, acts on a body while that body moves from the point P (x = 2m, y = 6m) to the point Q (x = 24m, y = 1m). How much work does the force do on the body during this process?",
+		answerArray: ["16 J","30 J","46 N","56 J","65 N"],
+		correctAnswer: "16 N",
+		unitNumber: 1
+	}
+	{
+		questionText: "A ball is thrown horizontally from the top of a tower 40m high. The ball strikes the ground at a point 80m from the bottom of the tower. Find the angle that the velocity vector makes with the horizontal just before the ball hits the ground",
+		answerArray: ["315 degrees","41 degrees","0 degrees","90 degrees","82 degrees"],
+		correctAnswer: "315 degrees",
+		unitNumber: 1
+	}
+	{
+		questionText: "An object is releasted from rest on a planet that has no atmosphere. The object falls freely for 3m in the first second. What is the magnitude of the acceleration due to gravity on the planet?",
+		answerArray: ["1.5 m/s^2","3 m/s^2","6 m/s^2","10 m/s^2","12 m/s^2"],
+		correctAnswer: "6 m/s^2",
+		unitNumber: 4
+	}
+	{
+		questionText: "Which of the following pairs of graphs shows the distance traveled versus time and the speed versus time for an object uniformly accelerated from rest?",
+		answerArray: ["a","b","c","d","d"],
+		correctAnswer: "e",
+		unitNumber: 1
+	}
+	{
+		questionText: "A ball is shot horizontally with an initial speed of 30 m/s from the top of a 45m building. Approximately how far from the base of the building will the ball land assuming the ground is flat? Ignore air resistance.",
+		answerArray: ["45 m","64 m","90 m","130 m","It will never land because there is no air resistance"],
+		correctAnswer: "90 m",
+		unitNumber: 1
+	}
+	{
+		questionText: "A 3kg block starts at rest at the top of a 37 degree incline, which is 5m long. Its speed when it reaches the bottom is 2 m/s. What's the average friction force opposing its motion?",
+		answerArray: ["1.4 N","16 N","18 N", "19 N", "28 N"],
+		correctAnswer: "16 N",
+		unitNumber: 1
+	}
+	{
+		questionText: "A ball is thrown upward. At a height of 10m above the ground, the ball has a potential energy of 50 J (with PE=0 at ground level) and is moving upward with a kinetic energy of 50 J. Air frition is neglibgible. The max height reached by the ball is most nearly",
+		answerArray: ["10 m","20 m","30 m","40 m","50 m"],
+		correctAnswer: "20 m",
+		unitNumber: 1
+	}
+	{
+		questionText: "A ball initially moves horizontally with velocity vi, as shown above. It is then struck by a stick. After leaving the stick, the ball moves vertically wiht a velocity vf, which is smaller in magnitude than vi. (vi is left, vf is up). Which of the following vectors best represents the direction of the average force that the stick exerts on the ball?",
+		answerArray: ["left","up","up-right","up-left","up-up-left"],
+		correctAnswer: "up-left",
+		unitNumber: 1
+	}
+	{
+		questionText: "In ideal projectile motion, what can be said about motion in the horizontal direction and motion in the vertical direction",
+		answerArray: ["The two velocity components are independent","Both accelerations must always be zero","The accelerations must increase together","They are related by freefall acceleration","The component velocities must increase together"],
+		correctAnswer: "The two velocity components are independent",
+		unitNumber: 1
+	}
+	{
+		questionText: "An object is thrown with a horizontal velocity of 20 m/s from a cliff that is 125 m above level ground. If air resistance is negligible, teh time that it takes the object to fall to teh ground from the cliff is most nearly",
+		answerArray: ["3s","5s","6s","12s","25s"],
+		correctAnswer: "5s",
+		unitNumber: 1
+	}
 	];
 
   firebase.database().ref('/questions').update({
@@ -459,30 +572,30 @@ var showResults = function(){
 //   }
 
 
-var readData = function(){
-	firebase.database().ref('/responses/'+userId).once("value").then(function(snapshot){
-		var username = snapshot.val().username;
-		var studentScore = correctCounter/questionArray.length;
-		var classAverage = 0;
-		var keys = Object.keys(snapshot.val());
-		for (var i = 0; i<keys.length; i++){
-			var key = keys[i];
-			var response = snapshot.val()[keys[i]]
-			var responseKeys = Object.keys(response);
-			var responseScore = 0;
-			for (var x = 0; x<responseKeys.length; x++){
-				var responseKey = responseKeys[i]
-				responseScore += response[responseKey]
-			}
-			classScore += responseScore;
-		}
-		classAverage = classScore/(keys.length*questionArray.length)
-		$("#theQuestions").hide()
-		$("#theResults").show()
+// var readData = function(){
+// 	firebase.database().ref('/responses/'+userId).once("value").then(function(snapshot){
+// 		var username = snapshot.val().username;
+// 		var studentScore = correctCounter/questionArray.length;
+// 		var classAverage = 0;
+// 		var keys = Object.keys(snapshot.val());
+// 		for (var i = 0; i<keys.length; i++){
+// 			var key = keys[i];
+// 			var response = snapshot.val()[keys[i]]
+// 			var responseKeys = Object.keys(response);
+// 			var responseScore = 0;
+// 			for (var x = 0; x<responseKeys.length; x++){
+// 				var responseKey = responseKeys[i]
+// 				responseScore += response[responseKey]
+// 			}
+// 			classScore += responseScore;
+// 		}
+// 		classAverage = classScore/(keys.length*questionArray.length)
+// 		$("#theQuestions").hide()
+// 		$("#theResults").show()
 
-		});
+// 		});
 		
-	}
+// 	}
 
 // showResults();
 
