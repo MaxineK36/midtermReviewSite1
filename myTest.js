@@ -167,12 +167,12 @@ var questionArray = [
 	},
 	{
 		questionText: "An object is shot vertically upward into the air with a positive initial velocity. Which of the following correctly describes the velocity and acceleration of the object at its maximum elevation?",
-		answerArray: ["V: +, A: +","V: 0, A: 0","V: -, A:-", "V: 0, A: -","V: +, A: -"],
+		answerArray: ["V: +, A: +","V: 0, A: 0","V: -, A: -", "V: 0, A: -","V: +, A: -"],
 		correctAnswer: "V: 0, A: -",
 		unitNumber: 1
 	},
 	{
-		questionText: "A block of mass 5 kg lies on an inclined plan, as shown above. The horizontal and vertical supports for the plan have lengths 4m and 3m, respectively. The coefficient of kinetic friction between the plan and the block 0.2. The  magnitude of the force F necessary to pull the block up the plan with constnat speed is most nearly",
+		questionText: "A block of mass 5 kg lies on an inclined plane, as shown above. The horizontal and vertical supports for the plane have lengths 4m and 3m, respectively. The coefficient of kinetic friction between the plane and the block is 0.3. The  magnitude of the force F necessary to pull the block up the plane with constant speed is most nearly",
 		answerArray: ["30 N","42 N","49 N","50 N", "58 N"],
 		correctAnswer: "42 N",
 		unitNumber: 1
@@ -184,7 +184,7 @@ var questionArray = [
 		unitNumber: 1
 	},
 	{
-		questionText: "A cannonball is blasted at an angle of 15.0 degrees above the horizontal and travels a horizontal distance of 125 m, landing at the same height as it was launched, APproximately, what is its initial vertical velocity component?",
+		questionText: "A cannonball is blasted at an angle of 15.0 degrees above the horizontal and travels a horizontal distance of 125 m, landing at the same height as it was launched, Approximately, what is its initial vertical velocity component?",
 		answerArray: ["13 m/s","26 m/s","50 m/s","71 m/s","190 m/s"],
 		correctAnswer: "13 m/s",
 		unitNumber: 1
@@ -196,9 +196,9 @@ var questionArray = [
 		unitNumber: 3
 	},
 	{
-		questionText: "The constnat force F with components Fx=3 N and Fy = 4N, shown above, acts on a body while that body moves from the point P (x = 2m, y = 6m) to the point Q (x = 24m, y = 1m). How much work does the force do on the body during this process?",
-		answerArray: ["16 J","30 J","46 N","56 J","65 N"],
-		correctAnswer: "16 N",
+		questionText: "The constant force F with components Fx=3 N and Fy = 4N, shown above, acts on a body while that body moves from the point P (x = 2m, y = 6m) to the point Q (x = 14m, y = 1m). How much work does the force do on the body during this process?",
+		answerArray: ["16 J","30 J","46 J","56 J","65 J"],
+		correctAnswer: "16 J",
 		unitNumber: 1
 	},
 	{
@@ -215,7 +215,7 @@ var questionArray = [
 	},
 	{
 		questionText: "Which of the following pairs of graphs shows the distance traveled versus time and the speed versus time for an object uniformly accelerated from rest?",
-		answerArray: ["a","b","c","d","d"],
+		answerArray: ["a","b","c","d","e"],
 		correctAnswer: "e",
 		unitNumber: 1
 	},
@@ -250,7 +250,7 @@ var questionArray = [
 		unitNumber: 1
 	},
 	{
-		questionText: "An object is thrown with a horizontal velocity of 20 m/s from a cliff that is 125 m above level ground. If air resistance is negligible, teh time that it takes the object to fall to teh ground from the cliff is most nearly",
+		questionText: "An object is thrown with a horizontal velocity of 20 m/s from a cliff that is 125 m above level ground. If air resistance is negligible, the time that it takes the object to fall to the ground from the cliff is most nearly",
 		answerArray: ["3s","5s","6s","12s","25s"],
 		correctAnswer: "5s",
 		unitNumber: 1
@@ -363,28 +363,28 @@ var buttonClicked = function(){
 			if (currentButton.checked === true) {
 				checkedFlag = true;
 
-			//figures out what you chose
-			var choiceName = "choice" + (i+1);
-			var selection = document.getElementById(choiceName).innerHTML;
+				//figures out what you chose
+				var choiceName = "choice" + (i+1);
+				var selection = document.getElementById(choiceName).innerHTML;
 
-			var correct
+				var correct
 
-			if (selection === questionArray[questionCounter-1].correctAnswer){
-				correctCounter++;
-				correct=true;
-				console.log(correctCounter)
-			}
+				if (selection === questionArray[questionCounter-1].correctAnswer){
+					correctCounter++;
+					correct=true;
+					console.log(correctCounter)
+				}
 
-			if (correct===true){
-				selectedAnswers.push([selection,"correct"])
-			}
-			else{
-				selectedAnswers.push([selection,"incorrect"])
-			}
-			
-			// questionArray[questionCounter-1].selectedAnswer = selection
-			console.log(selection)
-			break;
+				if (correct===true){
+					selectedAnswers.push([selection,"correct"])
+				}
+				else{
+					selectedAnswers.push([selection,"incorrect"])
+				}
+				
+				// questionArray[questionCounter-1].selectedAnswer = selection
+				console.log(selection)
+				break;
 			
 		}
 	}
@@ -470,18 +470,27 @@ var showResults = function(){
 
 			//if we've found the answer you chose, let's now find out if it's right or not (should only get here once per question)
 			if (currentAnswer===selectedAnswers[i][0]){
-				console.log("you got it right");
+				console.log("this is the one you chose");
 				//if you got it right, mark this list item as green
-				if (currentAnswer===questionArray[i].correctAnswer){
+				if (selectedAnswers[i][1]==="incorrect"){
+					$(listItem).css("color","red")
+					itIsCorrect = false;
+				}
+				else if (selectedAnswers[i][1]==="correct"){
 					$(listItem).css("color","green")
 					$(listItem).css("font-weight","bold")
 					$(listItem).css("font-style","italic")
 					itIsCorrect = true;
 				}
-				else {
-					$(listItem).css("color","red")
-					itIsCorrect = false;
-				}
+				// if (currentAnswer===questionArray[i].correctAnswer){
+				// 	$(listItem).css("color","green")
+				// 	$(listItem).css("font-weight","bold")
+				// 	$(listItem).css("font-style","italic")
+				// 	itIsCorrect = true;
+				// }
+				// else {
+					
+				// }
 			}
 
 			//also just in general, mark the correct answer in green
