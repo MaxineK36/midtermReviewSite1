@@ -5,7 +5,7 @@ $("#theResults").hide()
 // $('#doneButton').on('click', function() { window.location = 'myTestResults.html'; });
 
 
-console.log("11:38 version working")
+console.log("11:44 version working")
 
 var percentCompleted
 
@@ -93,30 +93,30 @@ var questionArray = [
 	// 	questionNumber: 10
 
 	// },
-	// {
-	// 	questionText: "<img class='inlineImg' src='tension.jpg'> A system in equilibirum consists of an object of weight W that hangs from three rops, as show. The tensions in the ropes are T1, T2, and T3. Which of the following are correct values of T2 and T3? (Note: all answers are given in degrees)",
-	// 	answerArray: ["T2: Wtan60 T3: W/cos60", "T2: Wtan60 T3: W/sin60","T2: Wtan60 T3: Wsin60","T2: W/tan60 T3: W/cos60","T2: W/tan60 T3: W/sin60"],
-	// 	correctAnswer: "T2: W/tan60 T3: W/sin60",
-	// 	unitNumber: 2,
-	// 	questionNumber: 11
+	{
+		questionText: "<img class='inlineImg' src='tension.jpg'> A system in equilibirum consists of an object of weight W that hangs from three rops, as show. The tensions in the ropes are T1, T2, and T3. Which of the following are correct values of T2 and T3? (Note: all answers are given in degrees)",
+		answerArray: ["T2: Wtan60 T3: W/cos60", "T2: Wtan60 T3: W/sin60","T2: Wtan60 T3: Wsin60","T2: W/tan60 T3: W/cos60","T2: W/tan60 T3: W/sin60"],
+		correctAnswer: "T2: W/tan60 T3: W/sin60",
+		unitNumber: 2,
+		questionNumber: 11
 
-	// },
-	// {
-	// 	questionText: "A child is riding on a merry-go-round. As the speed of the merry-go-round is doubled, the magnitude of the centripetal force acting on the child",
-	// 	answerArray: ["remains the same","is doubled","is halved","is quadrupled","is fourthed"],
-	// 	correctAnswer: "is quadrupled",
-	// 	unitNumber: 4,
-	// 	questionNumber: 12
+	},
+	{
+		questionText: "A child is riding on a merry-go-round. As the speed of the merry-go-round is doubled, the magnitude of the centripetal force acting on the child",
+		answerArray: ["remains the same","is doubled","is halved","is quadrupled","is fourthed"],
+		correctAnswer: "is quadrupled",
+		unitNumber: 4,
+		questionNumber: 12
 
-	// },
-	// {
-	// 	questionText: "<img class='inlineImg' src='springs.jpg'> Two identical, massless springs are hung from a horizontal support. A block of mass m kilograms is suspending from the pair of springs, as shown above. When the block is in equilibirium, each spring is stretched an additioanl x meters. \n The force constant of each spring is most nearly",
-	// 	answerArray: ["mg/2","mg/(2x)","mgx","mg/x","x/(mg)"],
-	// 	correctAnswer: "mg/(2x)",
-	// 	unitNumber: 5,
-	// 	questionNumber: 13
+	},
+	{
+		questionText: "<img class='inlineImg' src='springs.jpg'> Two identical, massless springs are hung from a horizontal support. A block of mass m kilograms is suspending from the pair of springs, as shown above. When the block is in equilibirium, each spring is stretched an additioanl x meters. \n The force constant of each spring is most nearly",
+		answerArray: ["mg/2","mg/(2x)","mgx","mg/x","x/(mg)"],
+		correctAnswer: "mg/(2x)",
+		unitNumber: 5,
+		questionNumber: 13
 
-	// },
+	},
 	// {
 	// 	questionText: "Which of the following has the greatest power output?",
 	// 	answerArray: ["a weightlifter who lifts a 250 weight 2.1m in 3.0s","a mechanic's lift that raises a 1.2e4 N car 2.1 in 12s","a car engine that does 1.2e3 J of work in 5.0s","a crane that lifts a 2.5e4 N beam at a speed of 1.2m/s","a 350kg horse that constantly accelerates to 20m/s in 4s"],
