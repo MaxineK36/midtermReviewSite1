@@ -77,184 +77,184 @@ var questionArray = [
 		questionNumber: 8
 
 	},
-	{
-		questionText: "<img class='inlineImg' src='pulley.jpg'> Two 0.6 kg objects are connected by a thread that passes over a light, frictionless pulley, as shown above. The objects are initially held at rest. If a third object with mass=0.3kg is added on top of one of the 0.6kg objects as shown and the bojects are released, the magnitude of the acceleration of the 0.3kg object is most nearly",
-		answerArray: ["10.0 m/s","6.0 m/s","3.0 m/s","2.0 m/s","1.0 m/s"],
-		correctAnswer: "2.0 m/s",
-		unitNumber: 2,
-		questionNumber: 9
+	// {
+	// 	questionText: "<img class='inlineImg' src='pulley.jpg'> Two 0.6 kg objects are connected by a thread that passes over a light, frictionless pulley, as shown above. The objects are initially held at rest. If a third object with mass=0.3kg is added on top of one of the 0.6kg objects as shown and the bojects are released, the magnitude of the acceleration of the 0.3kg object is most nearly",
+	// 	answerArray: ["10.0 m/s","6.0 m/s","3.0 m/s","2.0 m/s","1.0 m/s"],
+	// 	correctAnswer: "2.0 m/s",
+	// 	unitNumber: 2,
+	// 	questionNumber: 9
 
-	},
-	{
-		questionText: "<img class='inlineImg' src='particle2.jpg'> The motion of a particle along a straight line is represented by the position versus time graph above. At whihch of the labeled points on the graph is the magnitude of the acceleration of the particle greatest?",
-		answerArray: ["a","b","c","d","e"],
-		correctAnswer: "c",
-		unitNumber: 1,
-		questionNumber: 10
+	// },
+	// {
+	// 	questionText: "<img class='inlineImg' src='particle2.jpg'> The motion of a particle along a straight line is represented by the position versus time graph above. At whihch of the labeled points on the graph is the magnitude of the acceleration of the particle greatest?",
+	// 	answerArray: ["a","b","c","d","e"],
+	// 	correctAnswer: "c",
+	// 	unitNumber: 1,
+	// 	questionNumber: 10
 
-	},
-	{
-		questionText: "<img class='inlineImg' src='tension.jpg'> A system in equilibirum consists of an object of weight W that hangs from three rops, as show. The tensions in the ropes are T1, T2, and T3. Which of the following are correct values of T2 and T3? (Note: all answers are given in degrees)",
-		answerArray: ["T2: Wtan60 T3: W/cos60", "T2: Wtan60 T3: W/sin60","T2: Wtan60 T3: Wsin60","T2: W/tan60 T3: W/cos60","T2: W/tan60 T3: W/sin60"],
-		correctAnswer: "T2: W/tan60 T3: W/sin60",
-		unitNumber: 2,
-		questionNumber: 11
+	// },
+	// {
+	// 	questionText: "<img class='inlineImg' src='tension.jpg'> A system in equilibirum consists of an object of weight W that hangs from three rops, as show. The tensions in the ropes are T1, T2, and T3. Which of the following are correct values of T2 and T3? (Note: all answers are given in degrees)",
+	// 	answerArray: ["T2: Wtan60 T3: W/cos60", "T2: Wtan60 T3: W/sin60","T2: Wtan60 T3: Wsin60","T2: W/tan60 T3: W/cos60","T2: W/tan60 T3: W/sin60"],
+	// 	correctAnswer: "T2: W/tan60 T3: W/sin60",
+	// 	unitNumber: 2,
+	// 	questionNumber: 11
 
-	},
-	{
-		questionText: "A child is riding on a merry-go-round. As the speed of the merry-go-round is doubled, the magnitude of the centripetal force acting on the child",
-		answerArray: ["remains the same","is doubled","is halved","is quadrupled","is fourthed"],
-		correctAnswer: "is quadrupled",
-		unitNumber: 4,
-		questionNumber: 12
+	// },
+	// {
+	// 	questionText: "A child is riding on a merry-go-round. As the speed of the merry-go-round is doubled, the magnitude of the centripetal force acting on the child",
+	// 	answerArray: ["remains the same","is doubled","is halved","is quadrupled","is fourthed"],
+	// 	correctAnswer: "is quadrupled",
+	// 	unitNumber: 4,
+	// 	questionNumber: 12
 
-	},
-	{
-		questionText: "<img class='inlineImg' src='springs.jpg'> Two identical, massless springs are hung from a horizontal support. A block of mass m kilograms is suspending from the pair of springs, as shown above. When the block is in equilibirium, each spring is stretched an additioanl x meters. \n The force constant of each spring is most nearly",
-		answerArray: ["mg/2","mg/(2x)","mgx","mg/x","x/(mg)"],
-		correctAnswer: "mg/(2x)",
-		unitNumber: 5,
-		questionNumber: 13
+	// },
+	// {
+	// 	questionText: "<img class='inlineImg' src='springs.jpg'> Two identical, massless springs are hung from a horizontal support. A block of mass m kilograms is suspending from the pair of springs, as shown above. When the block is in equilibirium, each spring is stretched an additioanl x meters. \n The force constant of each spring is most nearly",
+	// 	answerArray: ["mg/2","mg/(2x)","mgx","mg/x","x/(mg)"],
+	// 	correctAnswer: "mg/(2x)",
+	// 	unitNumber: 5,
+	// 	questionNumber: 13
 
-	},
-	{
-		questionText: "Which of the following has the greatest power output?",
-		answerArray: ["a weightlifter who lifts a 250 weight 2.1m in 3.0s","a mechanic's lift that raises a 1.2e4 N car 2.1 in 12s","a car engine that does 1.2e3 J of work in 5.0s","a crane that lifts a 2.5e4 N beam at a speed of 1.2m/s","a 350kg horse that constantly accelerates to 20m/s in 4s"],
-		correctAnswer: "a crane that lifts a 2.5e4 N beam at a speed of 1.2m/s",
-		unitNumber: 3,
-		questionNumber: 14
+	// },
+	// {
+	// 	questionText: "Which of the following has the greatest power output?",
+	// 	answerArray: ["a weightlifter who lifts a 250 weight 2.1m in 3.0s","a mechanic's lift that raises a 1.2e4 N car 2.1 in 12s","a car engine that does 1.2e3 J of work in 5.0s","a crane that lifts a 2.5e4 N beam at a speed of 1.2m/s","a 350kg horse that constantly accelerates to 20m/s in 4s"],
+	// 	correctAnswer: "a crane that lifts a 2.5e4 N beam at a speed of 1.2m/s",
+	// 	unitNumber: 3,
+	// 	questionNumber: 14
 
-	},
-	{
-		questionText: "A paticle of mass m moves along a straight path with a speed v defined by the function v=bt^2 + c, where b and c are constnats and t is time. What is the magnitude F of the net force on the particle at time t=T?",
-		answerArray: ["bT^2 + c","3mbT + 2c","mbT","mbT + c","2mbT"],
-		correctAnswer: "2mbT",
-		unitNumber: 1,
-		questionNumber: 15
+	// },
+	// {
+	// 	questionText: "A paticle of mass m moves along a straight path with a speed v defined by the function v=bt^2 + c, where b and c are constnats and t is time. What is the magnitude F of the net force on the particle at time t=T?",
+	// 	answerArray: ["bT^2 + c","3mbT + 2c","mbT","mbT + c","2mbT"],
+	// 	correctAnswer: "2mbT",
+	// 	unitNumber: 1,
+	// 	questionNumber: 15
 
-	},
-	{
-		questionText: "A sports car accelerates uniformly from rest, reaching a speed of 30 m/s in 6 seconds. During those 6 seconds, the car has traveled a distance of",
-		answerArray: ["15 m","30 m","60 m","90 m","180 m"],
-		correctAnswer: "90 m",
-		unitNumber: 1,
-		questionNumber: 16
+	// },
+	// {
+	// 	questionText: "A sports car accelerates uniformly from rest, reaching a speed of 30 m/s in 6 seconds. During those 6 seconds, the car has traveled a distance of",
+	// 	answerArray: ["15 m","30 m","60 m","90 m","180 m"],
+	// 	correctAnswer: "90 m",
+	// 	unitNumber: 1,
+	// 	questionNumber: 16
 
-	},
-	{
-		questionText: "A mass m moves on a curved path from point X to point Y. Which of the following idagrams indicates a possible combination of the net force F on the mass, and the velocity v and acceleration a of the mass at the location shown?",
-		answerArray: ["a","b","c","d","e"],
-		correctAnswer: "d",
-		unitNumber: 1
-	},
-	{
-		questionText: "In which of the following situations would an object be accelerated, \n I. It moves in a straight line at a constant speed \n II. It moves in uniform circular motion. \n It travels as a projectile in a gravitational field with negligible air resistance.",
-		answerArray: ["I only","III only","I and II only","II and III only","I, II, and III"],
-		correctAnswer: "II and III only",
-		unitNumber: 1
-	},
-	{
-		questionText: "A car travels 30 miles at an average speed of 60 miles per hour and then 30 miles at an average speed of 30 miles per hour. The average speed of the car over the 60 miles is",
-		answerArray: ["35 mph","40 mph", "45 mph","50 mph","53 mph"],
-		correctAnswer: "40 mph",
-		unitNumber: 1
-	},
-	{
-		questionText: "A block, starting from rest, slides 20m down a frictionless inclined plan from X to Y, dropping a vertical distance of 10m as shown above. What is the closest approximate velocity of the block at the end of the slide?",
-		answerArray: ["7 m/s","10 m/s","14 m/s","20 m/s", "100 m/s"],
-		correctAnswer: "14 m/s",
-		unitNumber: 1
-	},
-	{
-		questionText: "An object is shot vertically upward into the air with a positive initial velocity. Which of the following correctly describes the velocity and acceleration of the object at its maximum elevation?",
-		answerArray: ["V: +, A: +","V: 0, A: 0","V: -, A: -", "V: 0, A: -","V: +, A: -"],
-		correctAnswer: "V: 0, A: -",
-		unitNumber: 1
-	},
-	{
-		questionText: "A block of mass 5 kg lies on an inclined plane, as shown above. The horizontal and vertical supports for the plane have lengths 4m and 3m, respectively. The coefficient of kinetic friction between the plane and the block is 0.3. The  magnitude of the force F necessary to pull the block up the plane with constant speed is most nearly",
-		answerArray: ["30 N","42 N","49 N","50 N", "58 N"],
-		correctAnswer: "42 N",
-		unitNumber: 1
-	},
-	{
-		questionText: "Two people are in a boat that is capable of a maximum speed of 5km/h in still water, and wish to cross a river 1 km wide to a point directly across from their starting point. If the speed of the water in the river is 5 km/h, how much time is required for the crossing?",
-		answerArray: ["0.05 hr","0.1 hr","1 hr","10 hr","The point directly across from the starting point cannot be reached under these conditions"],
-		correctAnswer: "The point directly across from the starting point cannot be reached under these conditions",
-		unitNumber: 1
-	},
-	{
-		questionText: "A cannonball is blasted at an angle of 15.0 degrees above the horizontal and travels a horizontal distance of 125 m, landing at the same height as it was launched, Approximately, what is its initial vertical velocity component?",
-		answerArray: ["13 m/s","26 m/s","50 m/s","71 m/s","190 m/s"],
-		correctAnswer: "13 m/s",
-		unitNumber: 1
-	},
-	{
-		questionText: "How much elastic potential energy is stored in a bungee cord with a spring constant of 10 N/m when the cord is stretched 2m",
-		answerArray: ["10 J", "20 J","40 J","100 J","200 J"],
-		correctAnswer: "20 J",
-		unitNumber: 3
-	},
-	{
-		questionText: "The constant force F with components Fx=3 N and Fy = 4N, shown above, acts on a body while that body moves from the point P (x = 2m, y = 6m) to the point Q (x = 14m, y = 1m). How much work does the force do on the body during this process?",
-		answerArray: ["16 J","30 J","46 J","56 J","65 J"],
-		correctAnswer: "16 J",
-		unitNumber: 1
-	},
-	{
-		questionText: "A ball is thrown horizontally from the top of a tower 40m high. The ball strikes the ground at a point 80m from the bottom of the tower. Find the angle that the velocity vector makes with the horizontal just before the ball hits the ground",
-		answerArray: ["315 degrees","41 degrees","0 degrees","90 degrees","82 degrees"],
-		correctAnswer: "315 degrees",
-		unitNumber: 1
-	},
-	{
-		questionText: "An object is releasted from rest on a planet that has no atmosphere. The object falls freely for 3m in the first second. What is the magnitude of the acceleration due to gravity on the planet?",
-		answerArray: ["1.5 m/s^2","3 m/s^2","6 m/s^2","10 m/s^2","12 m/s^2"],
-		correctAnswer: "6 m/s^2",
-		unitNumber: 4
-	},
-	{
-		questionText: "Which of the following pairs of graphs shows the distance traveled versus time and the speed versus time for an object uniformly accelerated from rest?",
-		answerArray: ["a","b","c","d","e"],
-		correctAnswer: "e",
-		unitNumber: 1
-	},
-	{
-		questionText: "A ball is shot horizontally with an initial speed of 30 m/s from the top of a 45m building. Approximately how far from the base of the building will the ball land assuming the ground is flat? Ignore air resistance.",
-		answerArray: ["45 m","64 m","90 m","130 m","It will never land because there is no air resistance"],
-		correctAnswer: "90 m",
-		unitNumber: 1
-	},
-	{
-		questionText: "A 3kg block starts at rest at the top of a 37 degree incline, which is 5m long. Its speed when it reaches the bottom is 2 m/s. What's the average friction force opposing its motion?",
-		answerArray: ["1.4 N","16 N","18 N", "19 N", "28 N"],
-		correctAnswer: "16 N",
-		unitNumber: 1
-	},
-	{
-		questionText: "A ball is thrown upward. At a height of 10m above the ground, the ball has a potential energy of 50 J (with PE=0 at ground level) and is moving upward with a kinetic energy of 50 J. Air frition is neglibgible. The max height reached by the ball is most nearly",
-		answerArray: ["10 m","20 m","30 m","40 m","50 m"],
-		correctAnswer: "20 m",
-		unitNumber: 1
-	},
-	{
-		questionText: "A ball initially moves horizontally with velocity vi, as shown above. It is then struck by a stick. After leaving the stick, the ball moves vertically wiht a velocity vf, which is smaller in magnitude than vi. (vi is left, vf is up). Which of the following vectors best represents the direction of the average force that the stick exerts on the ball?",
-		answerArray: ["left","up","up-right","up-left","up-up-left"],
-		correctAnswer: "up-left",
-		unitNumber: 1
-	},
-	{
-		questionText: "In ideal projectile motion, what can be said about motion in the horizontal direction and motion in the vertical direction",
-		answerArray: ["The two velocity components are independent","Both accelerations must always be zero","The accelerations must increase together","They are related by freefall acceleration","The component velocities must increase together"],
-		correctAnswer: "The two velocity components are independent",
-		unitNumber: 1
-	},
-	{
-		questionText: "An object is thrown with a horizontal velocity of 20 m/s from a cliff that is 125 m above level ground. If air resistance is negligible, the time that it takes the object to fall to the ground from the cliff is most nearly",
-		answerArray: ["3s","5s","6s","12s","25s"],
-		correctAnswer: "5s",
-		unitNumber: 1
-	},
+	// },
+	// {
+	// 	questionText: "A mass m moves on a curved path from point X to point Y. Which of the following idagrams indicates a possible combination of the net force F on the mass, and the velocity v and acceleration a of the mass at the location shown?",
+	// 	answerArray: ["a","b","c","d","e"],
+	// 	correctAnswer: "d",
+	// 	unitNumber: 1
+	// },
+	// {
+	// 	questionText: "In which of the following situations would an object be accelerated, \n I. It moves in a straight line at a constant speed \n II. It moves in uniform circular motion. \n It travels as a projectile in a gravitational field with negligible air resistance.",
+	// 	answerArray: ["I only","III only","I and II only","II and III only","I, II, and III"],
+	// 	correctAnswer: "II and III only",
+	// 	unitNumber: 1
+	// },
+	// {
+	// 	questionText: "A car travels 30 miles at an average speed of 60 miles per hour and then 30 miles at an average speed of 30 miles per hour. The average speed of the car over the 60 miles is",
+	// 	answerArray: ["35 mph","40 mph", "45 mph","50 mph","53 mph"],
+	// 	correctAnswer: "40 mph",
+	// 	unitNumber: 1
+	// },
+	// {
+	// 	questionText: "A block, starting from rest, slides 20m down a frictionless inclined plan from X to Y, dropping a vertical distance of 10m as shown above. What is the closest approximate velocity of the block at the end of the slide?",
+	// 	answerArray: ["7 m/s","10 m/s","14 m/s","20 m/s", "100 m/s"],
+	// 	correctAnswer: "14 m/s",
+	// 	unitNumber: 1
+	// },
+	// {
+	// 	questionText: "An object is shot vertically upward into the air with a positive initial velocity. Which of the following correctly describes the velocity and acceleration of the object at its maximum elevation?",
+	// 	answerArray: ["V: +, A: +","V: 0, A: 0","V: -, A: -", "V: 0, A: -","V: +, A: -"],
+	// 	correctAnswer: "V: 0, A: -",
+	// 	unitNumber: 1
+	// },
+	// {
+	// 	questionText: "A block of mass 5 kg lies on an inclined plane, as shown above. The horizontal and vertical supports for the plane have lengths 4m and 3m, respectively. The coefficient of kinetic friction between the plane and the block is 0.3. The  magnitude of the force F necessary to pull the block up the plane with constant speed is most nearly",
+	// 	answerArray: ["30 N","42 N","49 N","50 N", "58 N"],
+	// 	correctAnswer: "42 N",
+	// 	unitNumber: 1
+	// },
+	// {
+	// 	questionText: "Two people are in a boat that is capable of a maximum speed of 5km/h in still water, and wish to cross a river 1 km wide to a point directly across from their starting point. If the speed of the water in the river is 5 km/h, how much time is required for the crossing?",
+	// 	answerArray: ["0.05 hr","0.1 hr","1 hr","10 hr","The point directly across from the starting point cannot be reached under these conditions"],
+	// 	correctAnswer: "The point directly across from the starting point cannot be reached under these conditions",
+	// 	unitNumber: 1
+	// },
+	// {
+	// 	questionText: "A cannonball is blasted at an angle of 15.0 degrees above the horizontal and travels a horizontal distance of 125 m, landing at the same height as it was launched, Approximately, what is its initial vertical velocity component?",
+	// 	answerArray: ["13 m/s","26 m/s","50 m/s","71 m/s","190 m/s"],
+	// 	correctAnswer: "13 m/s",
+	// 	unitNumber: 1
+	// },
+	// {
+	// 	questionText: "How much elastic potential energy is stored in a bungee cord with a spring constant of 10 N/m when the cord is stretched 2m",
+	// 	answerArray: ["10 J", "20 J","40 J","100 J","200 J"],
+	// 	correctAnswer: "20 J",
+	// 	unitNumber: 3
+	// },
+	// {
+	// 	questionText: "The constant force F with components Fx=3 N and Fy = 4N, shown above, acts on a body while that body moves from the point P (x = 2m, y = 6m) to the point Q (x = 14m, y = 1m). How much work does the force do on the body during this process?",
+	// 	answerArray: ["16 J","30 J","46 J","56 J","65 J"],
+	// 	correctAnswer: "16 J",
+	// 	unitNumber: 1
+	// },
+	// {
+	// 	questionText: "A ball is thrown horizontally from the top of a tower 40m high. The ball strikes the ground at a point 80m from the bottom of the tower. Find the angle that the velocity vector makes with the horizontal just before the ball hits the ground",
+	// 	answerArray: ["315 degrees","41 degrees","0 degrees","90 degrees","82 degrees"],
+	// 	correctAnswer: "315 degrees",
+	// 	unitNumber: 1
+	// },
+	// {
+	// 	questionText: "An object is releasted from rest on a planet that has no atmosphere. The object falls freely for 3m in the first second. What is the magnitude of the acceleration due to gravity on the planet?",
+	// 	answerArray: ["1.5 m/s^2","3 m/s^2","6 m/s^2","10 m/s^2","12 m/s^2"],
+	// 	correctAnswer: "6 m/s^2",
+	// 	unitNumber: 4
+	// },
+	// {
+	// 	questionText: "Which of the following pairs of graphs shows the distance traveled versus time and the speed versus time for an object uniformly accelerated from rest?",
+	// 	answerArray: ["a","b","c","d","e"],
+	// 	correctAnswer: "e",
+	// 	unitNumber: 1
+	// },
+	// {
+	// 	questionText: "A ball is shot horizontally with an initial speed of 30 m/s from the top of a 45m building. Approximately how far from the base of the building will the ball land assuming the ground is flat? Ignore air resistance.",
+	// 	answerArray: ["45 m","64 m","90 m","130 m","It will never land because there is no air resistance"],
+	// 	correctAnswer: "90 m",
+	// 	unitNumber: 1
+	// },
+	// {
+	// 	questionText: "A 3kg block starts at rest at the top of a 37 degree incline, which is 5m long. Its speed when it reaches the bottom is 2 m/s. What's the average friction force opposing its motion?",
+	// 	answerArray: ["1.4 N","16 N","18 N", "19 N", "28 N"],
+	// 	correctAnswer: "16 N",
+	// 	unitNumber: 1
+	// },
+	// {
+	// 	questionText: "A ball is thrown upward. At a height of 10m above the ground, the ball has a potential energy of 50 J (with PE=0 at ground level) and is moving upward with a kinetic energy of 50 J. Air frition is neglibgible. The max height reached by the ball is most nearly",
+	// 	answerArray: ["10 m","20 m","30 m","40 m","50 m"],
+	// 	correctAnswer: "20 m",
+	// 	unitNumber: 1
+	// },
+	// {
+	// 	questionText: "A ball initially moves horizontally with velocity vi, as shown above. It is then struck by a stick. After leaving the stick, the ball moves vertically wiht a velocity vf, which is smaller in magnitude than vi. (vi is left, vf is up). Which of the following vectors best represents the direction of the average force that the stick exerts on the ball?",
+	// 	answerArray: ["left","up","up-right","up-left","up-up-left"],
+	// 	correctAnswer: "up-left",
+	// 	unitNumber: 1
+	// },
+	// {
+	// 	questionText: "In ideal projectile motion, what can be said about motion in the horizontal direction and motion in the vertical direction",
+	// 	answerArray: ["The two velocity components are independent","Both accelerations must always be zero","The accelerations must increase together","They are related by freefall acceleration","The component velocities must increase together"],
+	// 	correctAnswer: "The two velocity components are independent",
+	// 	unitNumber: 1
+	// },
+	// {
+	// 	questionText: "An object is thrown with a horizontal velocity of 20 m/s from a cliff that is 125 m above level ground. If air resistance is negligible, the time that it takes the object to fall to the ground from the cliff is most nearly",
+	// 	answerArray: ["3s","5s","6s","12s","25s"],
+	// 	correctAnswer: "5s",
+	// 	unitNumber: 1
+	// },
 	];
 
   firebase.database().ref('/questions').update({
